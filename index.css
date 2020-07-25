@@ -1,0 +1,7 @@
+body{
+  font-family: system-ui;
+}
+input[type=submit]{
+  background: rgba(199, 16, 71, 1);
+  color: white;
+}
