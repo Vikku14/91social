@@ -15,13 +15,13 @@
     <div class="d-flex mx-auto card shadow mt-5 p-4">
       <div class="container">
         <div class="h3 text-dark">
-          <img src="images/Logo.webp" alt="logo" class="mr-3"> Contact Form
+          <img src="images/Logo.webp" alt="logo" class="mr-5"> Contact Form
         </div>
-        <form class="form mt-4 h6 text-dark" id="form">
+        <form class="form mt-4 h6 text-dark" id="form" method="post">
           <div class="row">
             <div class="form-group col-md-4 col-6">
               <label for="title" class="forn-label">Title:</label>
-              <select name="title" id="title" class="form-control" required>
+              <select name="title" id="title" class="form-control" title="Enter Title" required>
                 <option value="" disabled selected>--choose--</option>
                 <option value="Mr">Mr.</option>
                 <option value="Mrs">Mrs.</option>
@@ -29,43 +29,43 @@
               </select>
             </div>
             <div class="form-group col-md-8 col-6">
-              <label for="name" class="">Name: </label>
-              <input type="text" name="name" id="name" class="form-control" placeholder="Eg. John" required>
+              <label for="name" class="">Username: </label>
+              <input type="text" name="name" id="name" class="form-control" title="Enter atleast 3 characters" minlength="3" placeholder="Eg. John" required>
             </div>
           </div>
 
           <div class="row">
             <div class="col-12 my-1">
               <label for="email" class="">Email:</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="Eg. some@one.com" required>
+              <input type="email" name="email" id="email" class="form-control" title="Valid Email: abc@def.xyz" placeholder="Eg. some@one.com" required>
             </div>
           </div>
 
           <div class="row">
             <div class="col-12 my-1">
               <label for="password" class="">Password:</label>
-              <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required>
+              <input type="password" name="password" id="password" class="form-control" pattern="(?=.*\d)(?=.*[a-zA-Z]).{7,}" minlength="7" title="Must contain at least one number and one alphabet letter, and at least 7 or more characters"
+                placeholder="Enter password" required>
             </div>
           </div>
 
           <div class="row">
             <div class="col-12 my-1">
               <label for="phone" class="">Mobile Number:</label>
-              <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]{10}" placeholder="Eg. 1234567890" maxlength="10" required>
+              <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]{10}" title="Must contain 10 digits" placeholder="Eg. 1234567890" maxlength="10" required>
             </div>
           </div>
 
           <div class="row">
             <div class="col-12 my-1">
               <label for="address">Address:</label>
-              <textarea id="address" name="address" rows="4" cols="50" placeholder="Enter your Address" class="form-control" required></textarea>
+              <textarea id="address" name="address" rows="4" cols="50" maxlength="500" placeholder="Enter your Address" title="Enter Address" class="form-control" required></textarea>
             </div>
           </div>
           <div class="row">
-            <input type="submit" name="submit" class="btn btn-lg mx-auto col-md-4 col-12 mt-2" value="Sent It">
+            <button type="submit" name="submit" class="btn btn-lg mx-auto col-md-4 col-12 mt-2">Submit</button>
           </div>
           <div class="mt-5" id="responseDiv">
-
           </div>
         </form>
       </div>
@@ -78,7 +78,7 @@
     <div class="mt-5 display-4">
       Thanks for your Response!
       <div class="mt-2">
-        <ul class="list-group lead list-group-flush">
+        <ul class="list-group lead list-group-flush mb-2">
           <li class="list-group-item"> <span class="col-6" >Title:<span> <span class="col-6" > {{ title }}</span>  </li>
           <li class="list-group-item"> <span class="col-6" >Name:<span> <span class="col-6" > {{ name }}</span>  </li>
           <li class="list-group-item"> <span class="col-6" >Email:<span> <span class="col-6" > {{ email }}</span>  </li>
@@ -86,10 +86,13 @@
           <li class="list-group-item"> <span class="col-6" >Mobile Number:<span> <span class="col-6" > {{ phone }}</span>  </li>
           <li class="list-group-item"> <span class="col-6" >Address:<span> <span class="col-6" > {{ address }}</span>  </li>
         </ul>
+        <a href="index.html" class="btn btn-lg btn-outline-dark">Go Back to form</a>
       </div>
     </div>
   </script>
   <script type="text/javascript" src="index.js"></script>
+
+  <!-- <script type="text/javascript" src="validation.js"></script> -->
 </body>
 
 </html>
