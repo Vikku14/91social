@@ -31,6 +31,7 @@
             <div class="form-group col-md-8 col-6">
               <label for="name" class="">Username: </label>
               <input type="text" name="name" id="name" class="form-control" title="Enter atleast 3 characters" minlength="3" placeholder="Eg. John" required>
+              <small>Username must be atleast 3 characters.</small>
             </div>
           </div>
 
@@ -46,6 +47,7 @@
               <label for="password" class="">Password:</label>
               <input type="password" name="password" id="password" class="form-control" pattern="(?=.*\d)(?=.*[a-zA-Z]).{7,}" minlength="7" title="Must contain at least one number and one alphabet letter, and at least 7 or more characters"
                 placeholder="Enter password" required>
+                <small>Must contain at least one number and one alphabet letter, and at least 7 or more characters.</small>
             </div>
           </div>
 
